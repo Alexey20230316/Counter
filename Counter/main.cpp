@@ -7,7 +7,6 @@ public:
 	Counter(int x) {
 		n = x;
 	}
-	Counter() {};
 
 	void increase() {        //  увеличить
 		n = n + 1;
@@ -20,10 +19,6 @@ public:
 	void show() {            //  показать
 		std::cout << "Значение счетчика: " << n << std::endl;
 	}                
-	int exit(int z) {
-		z = 0;
-		return z;
-	}
 
 private:
 	int n; 
@@ -35,8 +30,8 @@ int main() {
 	setlocale(LC_ALL, "ru");
 
 	int x = 1;         // ввод счетчика с клавы         
-	int z = 1;    // условие выхода из цикла
-	char c;         // да нет
+	int z = 1;        // условие выхода из цикла
+	char c;          // да нет
 	std::cout << "Хотите установить начальное значение счетчика?    y - yes, n - no" << std::endl;
 	std::cin >> c;
 	if (c == 'y') {
@@ -44,11 +39,7 @@ int main() {
 		std::cin >> x;
 	}
 	
-	
 		Counter p(x);
-		Counter p();
-		
-	
 		
 	while (z)
 	{
@@ -67,7 +58,7 @@ int main() {
 			p.show();
 			break;
 		case 'x':
-			z = p.exit(z);
+			z = 0;
 			break;
 		}
 	}
